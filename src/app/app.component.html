@@ -1,0 +1,18 @@
+<div class="container">
+  <header></header>
+  <section>
+    <button [hidden]="assessment" (click)="loadUser()" class="btn btn-primary">Load profile</button>
+    <div class="row" *ngIf="assessment">
+      <div class="col-sm-12 col-md-12">
+        <div class="thumbnail">
+          <img class="img-responsive "src="{{ assessment?.profile.image }}" alt="...">
+          <div class="caption">
+            <h3> Username : {{ assessment?.profile.username }}</h3>
+          </div>
+        </div>
+        <h2>Bidata : {{ assessment?.profile.bio }}</h2>
+      </div>
+    </div>
+  </section>
+  <footer></footer>
+</div>

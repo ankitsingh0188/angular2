@@ -10,17 +10,19 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
-var hero_detail_component_1 = require("./hero-detail.component");
-var heroes_component_1 = require("./heroes.component");
-var youtube_component_1 = require("./youtube.component");
-var footer_component_1 = require("./footer.component");
+var hero_detail_component_1 = require("./header/hero-detail.component");
+var heroes_component_1 = require("./imdb/heroes.component");
+var youtube_component_1 = require("./youtube/youtube.component");
+var footer_component_1 = require("./footer/footer.component");
 var router_1 = require("@angular/router");
-var api_component_1 = require("./api.component");
+var api_component_1 = require("./api/api.component");
+var hero_form_component_1 = require("./forms/hero-form.component");
 var routes = [
-    { path: '', redirectTo: '/youtube', pathMatch: 'full' },
-    { path: 'youtube', component: youtube_component_1.YouTubeComponent },
+    { path: '', redirectTo: '/', pathMatch: 'full' },
+    { path: '/', component: youtube_component_1.YouTubeComponent },
     { path: 'imdb', component: heroes_component_1.HeroesComponent },
-    { path: 'api-data', component: api_component_1.ApiComponent }
+    { path: 'api-data', component: api_component_1.ApiComponent },
+    { path: 'forms', component: hero_form_component_1.HeroFormComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -34,7 +36,7 @@ AppModule = __decorate([
             forms_1.FormsModule,
             http_1.HttpModule,
             http_1.JsonpModule,
-            router_1.RouterModule.forRoot(routes)
+            router_1.RouterModule.forRoot(routes),
         ],
         exports: [router_1.RouterModule],
         declarations: [
@@ -43,7 +45,8 @@ AppModule = __decorate([
             heroes_component_1.HeroesComponent,
             footer_component_1.FooterComponent,
             youtube_component_1.YouTubeComponent,
-            api_component_1.ApiComponent
+            api_component_1.ApiComponent,
+            hero_form_component_1.HeroFormComponent
         ],
         bootstrap: [
             app_component_1.AppComponent
